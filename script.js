@@ -1,127 +1,26 @@
-const root = document.documentElement;
-const header = document.querySelector('.site-header');
-const themeToggle = document.getElementById('themeToggle');
-const languageToggle = document.getElementById('languageToggle');
-const languageLabel = document.getElementById('languageLabel');
-const menuButton = document.getElementById('menuButton');
-const navLinks = document.getElementById('navLinks');
-const glow = document.querySelector('.cursor-glow');
-const tiltCard = document.querySelector('.tilt-card');
-
-const dictionary = {
-  en: {
-    'nav.about': 'About', 'nav.work': 'Work', 'nav.stack': 'Stack', 'nav.contact': 'Contact',
-    'hero.available': 'Available for ambitious builds',
-    'hero.line1': 'I build systems that', 'hero.line2': 'work in the real world.',
-    'hero.lede': 'Full-stack developer focused on scalable community platforms, automation, integrations, FiveM products, and infrastructure.',
-    'hero.ctaWork': 'Explore my work', 'hero.roleLabel': 'ROLE', 'hero.role': 'Full-stack Developer', 'hero.baseLabel': 'BASE', 'hero.base': 'Morocco · Remote', 'hero.focusLabel': 'FOCUS', 'hero.focus': 'Product + Systems',
-    'card.tagline': 'Building reliable digital products from interface to infrastructure.',
-    'terminal.one': 'ship --quality production', 'terminal.two': 'scale --without chaos', 'terminal.three': 'automate --repetitive work',
-    'about.kicker': 'ABOUT', 'about.title': 'From idea to production.',
-    'about.lead': 'I care about the whole system — product experience, backend logic, integrations, deployment, monitoring, and the boring edge cases that make software dependable.',
-    'about.body': 'My work sits where web platforms, communities, game ecosystems, and automation meet. I like turning complicated workflows into clear interfaces and maintainable services.',
-    'about.p1Title': 'Build for reality', 'about.p1Body': 'Design around actual users, permissions, failures, and operational constraints.',
-    'about.p2Title': 'Automate the repeatable', 'about.p2Body': 'Remove repetitive work while keeping important decisions visible and auditable.',
-    'about.p3Title': 'Ship with ownership', 'about.p3Body': 'Treat performance, security, deployment, and polish as part of the product.',
-    'work.kicker': 'SELECTED WORK', 'work.title': 'Systems I’m building.',
-    'work.mks': 'A community operations platform connecting member identity, licensing, permissions, provisioning, Discord OAuth, and admin workflows through a central core API.',
-    'work.mks1': 'Role and scope based access control', 'work.mks2': 'Idempotent provisioning and license flows', 'work.mks3': 'Discord identity and guild integrations',
-    'work.tracker': 'A Kick-focused tracking and highlighting tool for community operations, designed around fast account recognition, visual tagging, and scalable client-side performance.',
-    'work.store': 'A premium FiveM product ecosystem combining polished storefront UX, licensing, server-side integrations, and custom resources for modern RP servers.',
-    'work.nexus': 'A self-hosted Minecraft environment with infrastructure planning, mod compatibility, server operations, and custom gameplay automation.',
-    'stack.kicker': 'TOOLKIT', 'stack.title': 'What I work with.', 'stack.webTitle': 'Web & Product', 'stack.apiTitle': 'Backend & Integrations', 'stack.opsTitle': 'Systems & Operations', 'stack.gameTitle': 'Game Ecosystems',
-    'contact.kicker': 'LET’S BUILD', 'contact.title': 'Have something ambitious in mind?', 'contact.body': 'I’m interested in products where software has to solve a real operational problem — not just look good in a screenshot.', 'contact.cta': 'Connect on GitHub',
-    'footer.copy': 'Built with care, shipped with Git.', 'footer.top': 'Back to top'
-  },
-  ar: {
-    'nav.about': 'عني', 'nav.work': 'أعمالي', 'nav.stack': 'التقنيات', 'nav.contact': 'تواصل',
-    'hero.available': 'متاح للمشاريع الطموحة',
-    'hero.line1': 'أبني أنظمة', 'hero.line2': 'تنجح في الواقع.',
-    'hero.lede': 'مطور Full-stack أركز على منصات المجتمعات القابلة للتوسع، الأتمتة، التكاملات، منتجات FiveM والبنية التحتية.',
-    'hero.ctaWork': 'استكشف أعمالي', 'hero.roleLabel': 'الدور', 'hero.role': 'مطور Full-stack', 'hero.baseLabel': 'الموقع', 'hero.base': 'المغرب · عن بُعد', 'hero.focusLabel': 'التركيز', 'hero.focus': 'المنتج + الأنظمة',
-    'card.tagline': 'أبني منتجات رقمية موثوقة من الواجهة إلى البنية التحتية.',
-    'terminal.one': 'ship --quality production', 'terminal.two': 'scale --without chaos', 'terminal.three': 'automate --repetitive work',
-    'about.kicker': 'نبذة', 'about.title': 'من الفكرة إلى الإنتاج.',
-    'about.lead': 'أهتم بالنظام كاملاً — تجربة المنتج، منطق الخلفية، التكاملات، النشر، المراقبة وحتى الحالات الطرفية التي تجعل البرمجيات موثوقة.',
-    'about.body': 'عملي يجمع بين منصات الويب والمجتمعات وأنظمة الألعاب والأتمتة. أحب تحويل سير العمل المعقد إلى واجهات واضحة وخدمات سهلة الصيانة.',
-    'about.p1Title': 'ابنِ للواقع', 'about.p1Body': 'تصميم يأخذ المستخدمين الحقيقيين والصلاحيات والأعطال والقيود التشغيلية بعين الاعتبار.',
-    'about.p2Title': 'أتمت ما يتكرر', 'about.p2Body': 'إلغاء العمل المتكرر مع إبقاء القرارات المهمة واضحة وقابلة للمراجعة.',
-    'about.p3Title': 'سلّم بمسؤولية', 'about.p3Body': 'الأداء والأمان والنشر والصقل جزء من المنتج وليست إضافات لاحقة.',
-    'work.kicker': 'أعمال مختارة', 'work.title': 'أنظمة أعمل على بنائها.',
-    'work.mks': 'منصة لإدارة عمليات المجتمع تربط هوية الأعضاء والتراخيص والصلاحيات والتجهيز وDiscord OAuth وسير عمل الإدارة عبر Core API مركزي.',
-    'work.mks1': 'تحكم بالصلاحيات مبني على الأدوار والنطاقات', 'work.mks2': 'تجهيز وربط تراخيص بطريقة آمنة وقابلة للتكرار', 'work.mks3': 'تكامل هوية Discord والسيرفرات',
-    'work.tracker': 'أداة موجهة لـ Kick لتتبع وإبراز حسابات المجتمع، مع تعرف سريع على الحسابات وتصنيف بصري وأداء قابل للتوسع داخل المتصفح.',
-    'work.store': 'منظومة منتجات FiveM مميزة تجمع بين متجر احترافي، التراخيص، تكاملات الخادم وموارد مخصصة لسيرفرات RP الحديثة.',
-    'work.nexus': 'بيئة Minecraft مستضافة ذاتياً تشمل تخطيط البنية التحتية، توافق المودات، تشغيل الخادم وأتمتة مخصصة لأسلوب اللعب.',
-    'stack.kicker': 'الأدوات', 'stack.title': 'التقنيات التي أعمل بها.', 'stack.webTitle': 'الويب والمنتج', 'stack.apiTitle': 'الخلفية والتكاملات', 'stack.opsTitle': 'الأنظمة والتشغيل', 'stack.gameTitle': 'أنظمة الألعاب',
-    'contact.kicker': 'لنَبْنِ', 'contact.title': 'عندك فكرة طموحة؟', 'contact.body': 'تهمني المنتجات التي تحتاج البرمجيات فيها إلى حل مشكلة تشغيلية حقيقية، وليس فقط أن تبدو جميلة في لقطة شاشة.', 'contact.cta': 'تواصل عبر GitHub',
-    'footer.copy': 'صُمم بعناية ونُشر عبر Git.', 'footer.top': 'العودة للأعلى'
-  }
-};
-
-function applyLanguage(lang) {
-  const next = dictionary[lang] ? lang : 'en';
-  root.lang = next;
-  root.dir = next === 'ar' ? 'rtl' : 'ltr';
-  document.querySelectorAll('[data-i18n]').forEach((node) => {
-    const key = node.dataset.i18n;
-    if (dictionary[next][key]) node.textContent = dictionary[next][key];
-  });
-  languageLabel.textContent = next === 'en' ? 'AR' : 'EN';
-  localStorage.setItem('portfolio-language', next);
-}
-
-function applyTheme(theme) {
-  const next = theme === 'light' ? 'light' : 'dark';
-  root.dataset.theme = next;
-  localStorage.setItem('portfolio-theme', next);
-}
-
-const savedTheme = localStorage.getItem('portfolio-theme');
-const preferredTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-applyTheme(savedTheme || preferredTheme);
-applyLanguage(localStorage.getItem('portfolio-language') || 'en');
-
-themeToggle.addEventListener('click', () => applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
-languageToggle.addEventListener('click', () => applyLanguage(root.lang === 'en' ? 'ar' : 'en'));
-
-menuButton.addEventListener('click', () => {
-  const open = navLinks.classList.toggle('open');
-  menuButton.classList.toggle('active', open);
-  menuButton.setAttribute('aria-expanded', String(open));
-});
-
-document.querySelectorAll('.nav-links a').forEach((link) => link.addEventListener('click', () => {
-  navLinks.classList.remove('open');
-  menuButton.classList.remove('active');
-  menuButton.setAttribute('aria-expanded', 'false');
-}));
-
-window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 16), { passive: true });
-document.getElementById('year').textContent = new Date().getFullYear();
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach((node) => observer.observe(node));
-
-if (window.matchMedia('(pointer: fine)').matches) {
-  window.addEventListener('pointermove', (event) => {
-    glow.style.left = `${event.clientX}px`;
-    glow.style.top = `${event.clientY}px`;
-  }, { passive: true });
-
-  tiltCard.addEventListener('pointermove', (event) => {
-    const rect = tiltCard.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-    tiltCard.style.transform = `perspective(900px) rotateY(${x * 7}deg) rotateX(${y * -7}deg)`;
-  });
-  tiltCard.addEventListener('pointerleave', () => { tiltCard.style.transform = ''; });
-}
+const root=document.documentElement;const body=document.body;const header=document.querySelector('.site-header');const themeToggle=document.getElementById('themeToggle');const languageToggle=document.getElementById('languageToggle');const languageLabel=document.getElementById('languageLabel');const menuButton=document.getElementById('menuButton');const navLinks=document.getElementById('navLinks');const projectGrid=document.getElementById('projectGrid');const projectFilters=document.getElementById('projectFilters');const projectModal=document.getElementById('projectModal');const toast=document.getElementById('toast');
+const projects=[
+{id:'roleplay',number:'01',title:'MKS RolePlay Platform',category:'platform',privacy:'LIVE',visual:'roleplay-visual',summary:{en:'A deployed Arabic gaming community platform with applications, streamer surfaces, account flows and administration.',ar:'منصة مجتمع ألعاب عربية منشورة فعلياً، فيها الطلبات، صفحات الستريمرز، الحسابات ولوحة الإدارة.'},tags:['React','Node.js','Discord OAuth'],points:{en:['Public community experience with multiple product surfaces','Account and Discord authentication flows','Administration and operational workflows','Deployed production application under app.m4i.ma'],ar:['واجهة مجتمع كاملة بعدة أقسام ومنتجات','تدفقات حسابات وتسجيل عبر Discord','إدارة وعمليات تشغيلية','منصة منشورة فعلياً على app.m4i.ma']},links:[{label:'Live project',url:'https://app.m4i.ma/'}]},
+{id:'store',number:'02',title:'M4I Store',category:'platform',privacy:'PRIVATE BUILD',summary:{en:'A self-hosted FiveM storefront powered by Tebex Headless and Cfx.re with an M4I-owned UI, CMS, customers, docs and production tooling.',ar:'متجر FiveM مستضاف ذاتياً مبني على Tebex Headless وCfx.re بواجهة M4I وCMS والعملاء والتوثيق وأدوات الإنتاج.'},tags:['Python','Tebex','Cfx.re','CMS'],points:{en:['Headless Tebex basket and fulfilment flow','Discord-only administration and audit records','CMS, products, collections, gift cards and customer history','Production preflight, migrations, Nginx and Docker tooling'],ar:['ربط Headless مع Tebex وCfx','إدارة عبر Discord وسجلات تدقيق','CMS ومنتجات ومجموعات وGift Cards والعملاء','تهيئة إنتاجية مع migrations وNginx وDocker']},links:[]},
+{id:'core',number:'03',title:'m4i_core',category:'fivem',privacy:'PRIVATE CORE',summary:{en:'Framework-neutral, server-authoritative FiveM core designed around explicit persistence, stable exports and a small hot path.',ar:'Core لـ FiveM محايد عن الفريموركات، Server-authoritative ومصمم حول persistence واضحة وexports مستقرة.'},tags:['FiveM','Lua','Server Core'],points:{en:['No dependency on QBCore, Qbox, ESX or Ox Core','Server-authoritative money and state ownership','Stable contract consumed through m4i_bridge','Persistence and migration gates designed for production'],ar:['بدون اعتماد مباشر على QBCore أو Qbox أو ESX أو Ox','ملكية الحالة والمال من السيرفر','عقد ثابت يتم استهلاكه عبر m4i_bridge','قواعد persistence وmigration موجهة للإنتاج']},links:[{label:'Public docs',url:'https://github.com/m4i-store/m4i-docs/tree/main/core/m4i_core'}]},
+{id:'bridge',number:'04',title:'m4i_bridge',category:'fivem',privacy:'PRIVATE SYSTEM',summary:{en:'The integration layer that gives M4I resources one stable API across frameworks, inventory, UI, callbacks, logging and observability.',ar:'طبقة التكامل التي تمنح موارد M4I API واحدة مستقرة عبر الفريموركات والـinventory والواجهة والcallbacks والlogging.'},tags:['FiveM','Adapters','Observability'],points:{en:['Adapter-based provider architecture','Health-aware fallback and modular services','Callbacks, hooks, plugins and middleware','Centralized security, metrics and structured logging'],ar:['معمارية providers مبنية على adapters','Fallback حسب الصحة وخدمات modular','Callbacks وhooks وplugins وmiddleware','Security وmetrics وlogging مركزي']},links:[{label:'Public docs',url:'https://github.com/m4i-store/m4i-docs/tree/main/core/m4i_bridge'}]},
+{id:'identity',number:'05',title:'m4i_identity',category:'fivem',privacy:'PRIVATE SYSTEM',summary:{en:'Identity ownership for the M4I ecosystem: pre-join validation, policy decisions, locale selection, reconnect protection and runtime identity state.',ar:'نظام ملكية الهوية داخل M4I: تحقق قبل الدخول، سياسات، اختيار اللغة، حماية reconnect وحالة الهوية وقت التشغيل.'},tags:['Identity','FiveM','Localization'],points:{en:['Pre-join identity policy and validation','Read-only integration exports','Arabic, English and French localization','Dedicated non-breaking webhook event system'],ar:['سياسات وتحقق الهوية قبل الدخول','Exports للقراءة فقط','دعم العربية والإنجليزية والفرنسية','نظام Webhooks منفصل وغير كاسر للتشغيل']},links:[{label:'Public docs',url:'https://github.com/m4i-store/m4i-docs/tree/main/scripts/m4i_identity'}]},
+{id:'docs',number:'06',title:'M4I Docs',category:'platform',privacy:'PUBLIC',visual:'docs-visual',summary:{en:'The centralized documentation hub and single source of truth for M4I architecture, core, bridge and shared engineering standards.',ar:'مركز التوثيق الرسمي والمصدر الموحد لمعمارية M4I والـcore والbridge ومعايير التطوير المشتركة.'},tags:['GitBook','Architecture','Docs'],points:{en:['Canonical documentation for the ecosystem','Universal architecture and integration contracts','Shared security and data-access standards','Public source for users and developers'],ar:['التوثيق الرسمي للمنظومة','معمارية موحدة وعقود تكامل','معايير security وdata access','مصدر عام للمستخدمين والمطورين']},links:[{label:'GitHub repository',url:'https://github.com/m4i-store/m4i-docs'}]},
+{id:'desktop',number:'07',title:'MKS Desktop App',category:'tool',privacy:'ACTIVE BUILD',summary:{en:'The desktop evolution of the MKS browser extension, focused on chat tracking, highlighting, account recognition and lower browser overhead.',ar:'النسخة المكتبية المطورة من إضافة MKS، مركزة على تتبع الشات، التمييز، التعرف على الحسابات وتقليل استهلاك المتصفح.'},tags:['Desktop','Kick','Automation'],points:{en:['Extension workflow moved toward a standalone desktop app','Community account recognition and tagging','Support and target views for operations','Designed to reduce browser memory pressure'],ar:['نقل وظائف الإضافة إلى تطبيق مستقل','التعرف على حسابات المجتمع وتصنيفها','واجهات Support وTarget للعمليات','تصميم لتقليل ضغط RAM على المتصفح']},links:[]},
+{id:'bots',number:'08',title:'M4I Discord Systems',category:'tool',privacy:'PRIVATE SYSTEM',summary:{en:'A collection of Discord automation and community operations systems built around moderation, workflows, identity and administrative tooling.',ar:'مجموعة أنظمة Discord للأتمتة وتشغيل المجتمع، تشمل moderation والworkflows والهوية وأدوات الإدارة.'},tags:['Discord','Bots','Automation'],points:{en:['Community operations automation','Administrative workflows and role-aware actions','Identity-linked systems','Designed as reusable internal services'],ar:['أتمتة تشغيل المجتمع','Workflows إدارية وصلاحيات','أنظمة مربوطة بالهوية','خدمات داخلية قابلة لإعادة الاستخدام']},links:[]},
+{id:'hosting',number:'09',title:'M4I Infrastructure',category:'ops',privacy:'PRIVATE OPS',summary:{en:'The deployment and hosting layer behind M4I projects: Linux services, reverse proxies, TLS, process management and production operations.',ar:'طبقة الاستضافة والتشغيل خلف مشاريع M4I: Linux services وreverse proxies وTLS وإدارة العمليات والإنتاج.'},tags:['Linux','Nginx','Ops'],points:{en:['Self-hosted production environments','Nginx and TLS deployment patterns','Process and service management','Operational checks, backups and rollout discipline'],ar:['بيئات إنتاج مستضافة ذاتياً','Nginx وTLS','إدارة الخدمات والعمليات','فحوصات تشغيل ونسخ احتياطية وانضباط rollout']},links:[]}
+];
+const translations={en:{'nav.projects':'Projects','nav.ecosystem':'Ecosystem','nav.about':'About','nav.contact':'Contact','hero.badge':'M4I PROJECT ECOSYSTEM','hero.kicker':'MOMO — Developer & Product Builder','hero.titleA':'I build the systems','hero.titleB':'behind M4I.','hero.lede':'This is the home of my work: production platforms, FiveM infrastructure, community products, automation tools, desktop apps and the systems connecting them together.','hero.explore':'Explore projects','hero.stat1':'active builds & systems','hero.stat2':'product → backend → ops','hero.stat3':'building for global users','identity.tagline':'One identity. Multiple products. One connected ecosystem.','featured.label':'FEATURED BUILD','featured.title':'A real project, not a mock concept.','featured.body':'A complete Arabic gaming community platform with public pages, applications, streamer surfaces, account flows and an administration layer — deployed as a real product, not a portfolio-only demo.','featured.open':'Open live project','featured.details':'Project details','projects.label':'PROJECT INDEX','projects.title':'The M4I project ecosystem.','projects.lede':'Public products, private infrastructure and active builds. Private source stays private; the portfolio shows the product, architecture and result.','filters.all':'All','filters.platform':'Platforms','filters.tools':'Tools & Apps','filters.ops':'Infrastructure','ecosystem.label':'HOW IT CONNECTS','ecosystem.title':'More than isolated repositories.','map.core':'authoritative runtime','map.bridge':'universal integration','map.identity':'identity ownership','map.store':'commerce & products','map.docs':'single source of truth','map.apps':'community tools','about.label':'ABOUT MOMO','about.title':'I like owning the whole system.','about.lead':'I build products end-to-end: interface, backend, integrations, permissions, deployment and the operational details that decide whether software actually survives production.','about.body':'My projects sit between communities, gaming ecosystems and business tooling. The common thread is turning messy real-world workflows into systems that are easier to operate, extend and trust.','about.c1':'Product Engineering','about.c1b':'Interfaces, APIs, auth, state and real user workflows.','about.c2':'FiveM Architecture','about.c2b':'Framework-neutral systems, bridges, identity and reusable resources.','about.c3':'Automation','about.c3b':'Browser, Discord and desktop workflows that remove repetitive work.','about.c4':'Infrastructure','about.c4b':'Linux, deployment, observability and production operations.','evidence.label':'REAL WORK','evidence.title':'Public evidence where it makes sense.','evidence.docs':'Central documentation for the M4I architecture, core, bridge and shared standards.','evidence.roleplay':'A deployed community platform running on the M4I infrastructure.','evidence.open':'Open public source ↗','evidence.openLive':'Visit live product ↗','contact.label':'CONTACT','contact.title':'Have a project worth building?','contact.body':'For collaborations, technical work or questions about an M4I project, Discord is the preferred contact channel.','contact.discord':'Preferred contact','contact.pending':'Contact link to be connected before launch','contact.github':'Public code & documentation','footer.tag':'Products. Systems. Infrastructure.','modal.built':'What I built','modal.stack':'Stack / Scope'},ar:{'nav.projects':'المشاريع','nav.ecosystem':'المنظومة','nav.about':'عني','nav.contact':'تواصل','hero.badge':'منظومة مشاريع M4I','hero.kicker':'MOMO — مطور وباني منتجات','hero.titleA':'أبني الأنظمة','hero.titleB':'خلف M4I.','hero.lede':'هذا هو البيت الرسمي لأعمالي: منصات إنتاجية، بنية FiveM، منتجات مجتمعات، أدوات أتمتة، تطبيقات سطح المكتب والأنظمة التي تربط كل ذلك.','hero.explore':'استكشف المشاريع','hero.stat1':'مشروع ونظام نشط','hero.stat2':'من المنتج إلى الباكند والتشغيل','hero.stat3':'من المغرب لمستخدمين عالميين','identity.tagline':'هوية واحدة. منتجات متعددة. منظومة مترابطة.','featured.label':'مشروع مميز','featured.title':'مشروع حقيقي، وليس مجرد Mockup.','featured.body':'منصة مجتمع ألعاب عربية متكاملة تضم صفحات عامة، طلبات، واجهات الستريمرز، تدفقات الحسابات وطبقة إدارة — منشورة كمنتج فعلي وليست مجرد Demo للـPortfolio.','featured.open':'فتح المشروع المباشر','featured.details':'تفاصيل المشروع','projects.label':'فهرس المشاريع','projects.title':'منظومة مشاريع M4I.','projects.lede':'منتجات عامة، بنية خاصة ومشاريع قيد التطوير. الكود الخاص يبقى خاصاً؛ الـPortfolio يعرض المنتج والمعمارية والنتيجة.','filters.all':'الكل','filters.platform':'المنصات','filters.tools':'الأدوات والتطبيقات','filters.ops':'البنية التحتية','ecosystem.label':'كيف ترتبط','ecosystem.title':'أكثر من مجرد Repositories منفصلة.','map.core':'Runtime أساسي','map.bridge':'تكامل موحد','map.identity':'ملكية الهوية','map.store':'المتجر والمنتجات','map.docs':'المصدر الرسمي','map.apps':'أدوات المجتمع','about.label':'عن MOMO','about.title':'أفضل امتلاك النظام كاملاً.','about.lead':'أبني المنتجات من البداية للنهاية: الواجهة، الباكند، التكاملات، الصلاحيات، النشر والتفاصيل التشغيلية التي تحدد هل البرنامج فعلاً سيصمد في الإنتاج.','about.body':'مشاريعي تقع بين المجتمعات، أنظمة الألعاب وأدوات الأعمال. الخيط المشترك هو تحويل workflows المعقدة إلى أنظمة أسهل في التشغيل والتطوير والثقة.','about.c1':'هندسة المنتجات','about.c1b':'واجهات، APIs، تسجيل دخول، state وتدفقات مستخدمين حقيقية.','about.c2':'معمارية FiveM','about.c2b':'أنظمة محايدة عن الفريمورك، bridges، هوية وموارد قابلة لإعادة الاستخدام.','about.c3':'الأتمتة','about.c3b':'Browser وDiscord وDesktop workflows لإزالة العمل المتكرر.','about.c4':'البنية التحتية','about.c4b':'Linux، النشر، observability وتشغيل الإنتاج.','evidence.label':'عمل حقيقي','evidence.title':'دليل عام عندما يكون ذلك مناسباً.','evidence.docs':'التوثيق المركزي لمعمارية M4I والـCore والBridge والمعايير المشتركة.','evidence.roleplay':'منصة مجتمع منشورة وتعمل فوق بنية M4I.','evidence.open':'فتح المصدر العام ↗','evidence.openLive':'زيارة المنتج المباشر ↗','contact.label':'تواصل','contact.title':'عندك مشروع يستاهل يتبنى؟','contact.body':'للتعاون أو العمل التقني أو الأسئلة حول مشاريع M4I، Discord هو وسيلة التواصل المفضلة.','contact.discord':'وسيلة التواصل المفضلة','contact.pending':'سنربط رابط التواصل قبل الإطلاق النهائي','contact.github':'الكود العام والتوثيق','footer.tag':'منتجات. أنظمة. بنية تحتية.','modal.built':'ماذا بنيت','modal.stack':'التقنيات / النطاق'}};
+let currentLang=localStorage.getItem('m4i_lang')||'en';let currentFilter='all';
+function setLanguage(lang){currentLang=lang;const isArabic=lang==='ar';root.lang=lang;root.dir=isArabic?'rtl':'ltr';body.dir=root.dir;languageLabel.textContent=isArabic?'EN':'AR';document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.dataset.i18n;if(translations[lang][key])el.textContent=translations[lang][key]});localStorage.setItem('m4i_lang',lang);renderProjects()}
+function projectVisual(project){if(project.visual)return`<div class="project-visual ${project.visual}"><span class="visual-title">${project.privacy}</span></div>`;const letters=project.title.replace(/[^A-Za-z0-9]/g,'').slice(0,2).toUpperCase();return`<div class="project-visual"><span class="visual-title">M4I / ${project.category.toUpperCase()}</span><div class="visual-lines"><i></i><i></i><i></i></div><div class="visual-logo">${letters}</div></div>`}
+function renderProjects(){const filtered=projects.filter(p=>currentFilter==='all'||p.category===currentFilter);document.getElementById('projectCount').textContent=`${String(filtered.length).padStart(2,'0')} PROJECT${filtered.length===1?'':'S'}`;projectGrid.innerHTML=filtered.map((p,index)=>`<article class="project-card reveal ${index===0&&currentFilter==='all'?'featured-wide':''}" tabindex="0" role="button" data-project="${p.id}" aria-label="Open ${p.title} details">${projectVisual(p)}<div class="project-card-body"><div class="project-card-top"><span class="project-number">${p.number}</span><span class="project-privacy">${p.privacy}</span></div><h3>${p.title}</h3><p>${p.summary[currentLang]}</p><div class="project-card-bottom"><div class="tag-list">${p.tags.slice(0,3).map(tag=>`<span>${tag}</span>`).join('')}</div><span class="project-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div></div></article>`).join('');attachProjectHandlers();observeReveals()}
+function attachProjectHandlers(){document.querySelectorAll('[data-project]').forEach(el=>{const open=()=>openProject(el.dataset.project);el.addEventListener('click',open);el.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&el.tagName!=='BUTTON'){e.preventDefault();open()}})})}
+function openProject(id){const p=projects.find(item=>item.id===id);if(!p)return;document.getElementById('modalIndex').textContent=p.number;const status=document.getElementById('modalStatus');status.textContent=p.privacy;status.className=`project-status ${p.privacy==='LIVE'||p.privacy==='PUBLIC'?'live':''}`;document.getElementById('modalTitle').textContent=p.title;document.getElementById('modalSummary').textContent=p.summary[currentLang];document.getElementById('modalPoints').innerHTML=p.points[currentLang].map(point=>`<li>${point}</li>`).join('');document.getElementById('modalTags').innerHTML=p.tags.map(tag=>`<span>${tag}</span>`).join('');document.getElementById('modalLinks').innerHTML=p.links.length?p.links.map(link=>`<a href="${link.url}" target="_blank" rel="noreferrer">${link.label} ↗</a>`).join(''):`<span class="project-privacy">${currentLang==='ar'?'لا يوجد رابط عام — المصدر خاص':'No public link — private source'}</span>`;projectModal.classList.add('open');projectModal.setAttribute('aria-hidden','false');body.style.overflow='hidden'}
+function closeProject(){projectModal.classList.remove('open');projectModal.setAttribute('aria-hidden','true');body.style.overflow=''}document.querySelectorAll('[data-close-modal]').forEach(el=>el.addEventListener('click',closeProject));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProject()});
+projectFilters.addEventListener('click',e=>{const btn=e.target.closest('[data-filter]');if(!btn)return;currentFilter=btn.dataset.filter;projectFilters.querySelectorAll('.filter').forEach(item=>item.classList.toggle('active',item===btn));renderProjects()});
+function setTheme(theme){root.dataset.theme=theme;localStorage.setItem('m4i_theme',theme)}const savedTheme=localStorage.getItem('m4i_theme');if(savedTheme)setTheme(savedTheme);themeToggle.addEventListener('click',()=>setTheme(root.dataset.theme==='light'?'dark':'light'));languageToggle.addEventListener('click',()=>setLanguage(currentLang==='ar'?'en':'ar'));
+menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>18),{passive:true});
+let revealObserver;function observeReveals(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));return}if(!revealObserver)revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target)}}),{threshold:.12,rootMargin:'0px 0px -40px'});document.querySelectorAll('.reveal:not(.visible)').forEach(el=>revealObserver.observe(el))}
+const sections=[...document.querySelectorAll('section[id]')];const navAnchors=[...navLinks.querySelectorAll('a')];const sectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;navAnchors.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===`#${entry.target.id}`))}),{rootMargin:'-35% 0px -55%',threshold:0});sections.forEach(section=>sectionObserver.observe(section));
+document.getElementById('discordContact').addEventListener('click',()=>showToast(currentLang==='ar'?'خاصنا نربط رابط Discord ديالك قبل الإطلاق النهائي.':'Your Discord contact link still needs to be connected before final launch.'));function showToast(message){toast.textContent=message;toast.classList.add('show');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>toast.classList.remove('show'),3200)}document.getElementById('year').textContent=new Date().getFullYear();setLanguage(currentLang);observeReveals();
