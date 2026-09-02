@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#07090d" />
+  <meta name="description" content="MOMO — Full-stack developer building community platforms, automation systems, FiveM products, and scalable web experiences." />
+  <meta property="og:title" content="MOMO — Developer Portfolio" />
+  <meta property="og:description" content="Full-stack development, automation, integrations, FiveM, and infrastructure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/273487446?v=4" />
+  <title>MOMO — Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="MOMO home">
+        <span class="brand-mark">M</span>
+        <span class="brand-copy">MOMO<span class="brand-dot">.</span></span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#stack" data-i18n="nav.stack">Stack</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-button language-toggle" id="languageToggle" type="button" aria-label="Switch language" title="Switch language">
+          <span id="languageLabel">AR</span>
+        </button>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.66-5.66 1.42-1.42M4.92 19.08l1.42-1.42m0-11.32L4.92 4.92m14.16 14.16-1.42-1.42M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.8A8.5 8.5 0 0 1 8.2 3.5 8.5 8.5 0 1 0 20.5 15.8Z"/></svg>
+        </button>
+        <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero shell section-pad" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="status-dot"></span><span data-i18n="hero.available">Available for ambitious builds</span></div>
+        <h1 id="hero-title">
+          <span data-i18n="hero.line1">I build systems that</span>
+          <span class="gradient-text" data-i18n="hero.line2">work in the real world.</span>
+        </h1>
+        <p class="hero-lede" data-i18n="hero.lede">Full-stack developer focused on scalable community platforms, automation, integrations, FiveM products, and infrastructure.</p>
+
+        <div class="hero-cta">
+          <a class="button primary" href="#work">
+            <span data-i18n="hero.ctaWork">Explore my work</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+          </a>
+          <a class="button ghost" href="https://github.com/m4i-store" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03A9.5 9.5 0 0 1 12 6.84a9.5 9.5 0 0 1 2.5.34c1.91-1.3 2.75-1.03 2.75-1.03.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.35 4.68-4.58 4.93.36.31.68.92.68 1.86V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+
+        <div class="hero-meta" aria-label="Quick profile">
+          <div><span class="meta-label" data-i18n="hero.roleLabel">ROLE</span><strong data-i18n="hero.role">Full-stack Developer</strong></div>
+          <div><span class="meta-label" data-i18n="hero.baseLabel">BASE</span><strong data-i18n="hero.base">Morocco · Remote</strong></div>
+          <div><span class="meta-label" data-i18n="hero.focusLabel">FOCUS</span><strong data-i18n="hero.focus">Product + Systems</strong></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Developer profile card">
+        <div class="orb orb-a" aria-hidden="true"></div>
+        <div class="orb orb-b" aria-hidden="true"></div>
+        <div class="profile-card glass tilt-card">
+          <div class="profile-topline">
+            <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <span class="mono">momo.dev</span>
+          </div>
+          <div class="avatar-wrap">
+            <img src="https://avatars.githubusercontent.com/u/273487446?v=4" alt="M4I Store GitHub avatar" width="180" height="180" />
+            <div class="avatar-ring" aria-hidden="true"></div>
+          </div>
+          <div class="profile-name">
+            <p class="mono">@m4i-store</p>
+            <h2>MOMO</h2>
+            <p data-i18n="card.tagline">Building reliable digital products from interface to infrastructure.</p>
+          </div>
+          <div class="terminal" aria-label="Developer terminal preview">
+            <div><span class="prompt">$</span><span data-i18n="terminal.one">ship --quality production</span></div>
+            <div><span class="prompt">$</span><span data-i18n="terminal.two">scale --without chaos</span></div>
+            <div><span class="prompt">$</span><span data-i18n="terminal.three">automate --repetitive work</span><span class="caret">_</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee-wrap" aria-label="Specialties">
+      <div class="marquee"><div class="marquee-track">
+        <span>FULL-STACK</span><i>✦</i><span>AUTOMATION</span><i>✦</i><span>FIVEM</span><i>✦</i><span>DISCORD</span><i>✦</i><span>APIs</span><i>✦</i><span>LINUX</span><i>✦</i><span>FULL-STACK</span><i>✦</i><span>AUTOMATION</span><i>✦</i><span>FIVEM</span><i>✦</i><span>DISCORD</span><i>✦</i><span>APIs</span><i>✦</i><span>LINUX</span><i>✦</i>
+      </div></div>
+    </section>
+
+    <section class="about shell section-pad" id="about" aria-labelledby="about-title">
+      <div class="section-heading reveal">
+        <span class="section-number">01</span><div><p class="kicker" data-i18n="about.kicker">ABOUT</p><h2 id="about-title" data-i18n="about.title">From idea to production.</h2></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p class="about-lead" data-i18n="about.lead">I care about the whole system — product experience, backend logic, integrations, deployment, monitoring, and the boring edge cases that make software dependable.</p>
+          <p data-i18n="about.body">My work sits where web platforms, communities, game ecosystems, and automation meet. I like turning complicated workflows into clear interfaces and maintainable services.</p>
+        </div>
+        <div class="principles reveal">
+          <article class="principle"><span>01</span><div><h3 data-i18n="about.p1Title">Build for reality</h3><p data-i18n="about.p1Body">Design around actual users, permissions, failures, and operational constraints.</p></div></article>
+          <article class="principle"><span>02</span><div><h3 data-i18n="about.p2Title">Automate the repeatable</h3><p data-i18n="about.p2Body">Remove repetitive work while keeping important decisions visible and auditable.</p></div></article>
+          <article class="principle"><span>03</span><div><h3 data-i18n="about.p3Title">Ship with ownership</h3><p data-i18n="about.p3Body">Treat performance, security, deployment, and polish as part of the product.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="work shell section-pad" id="work" aria-labelledby="work-title">
+      <div class="section-heading reveal">
+        <span class="section-number">02</span><div><p class="kicker" data-i18n="work.kicker">SELECTED WORK</p><h2 id="work-title" data-i18n="work.title">Systems I’m building.</h2></div>
+      </div>
+      <div class="project-grid">
+        <article class="project-card project-featured reveal">
+          <div class="project-index">01</div>
+          <div class="project-content">
+            <div class="project-tags"><span>Laravel</span><span>OAuth</span><span>REST API</span><span>Infrastructure</span></div>
+            <h3>MKS Core & Portal</h3>
+            <p data-i18n="work.mks">A community operations platform connecting member identity, licensing, permissions, provisioning, Discord OAuth, and admin workflows through a central core API.</p>
+            <ul class="project-points"><li data-i18n="work.mks1">Role and scope based access control</li><li data-i18n="work.mks2">Idempotent provisioning and license flows</li><li data-i18n="work.mks3">Discord identity and guild integrations</li></ul>
+          </div>
+          <div class="project-visual dashboard-mock" aria-hidden="true">
+            <div class="mock-sidebar"><div class="mock-logo"></div><span></span><span></span><span></span><span></span></div>
+            <div class="mock-main"><div class="mock-bar"></div><div class="mock-stats"><i></i><i></i><i></i></div><div class="mock-chart"><span></span></div><div class="mock-table"><b></b><b></b><b></b><b></b></div></div>
+          </div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-index">02</div><div class="project-content"><div class="project-tags"><span>Browser</span><span>JavaScript</span><span>Automation</span></div><h3>MKS Chat Tracker</h3><p data-i18n="work.tracker">A Kick-focused tracking and highlighting tool for community operations, designed around fast account recognition, visual tagging, and scalable client-side performance.</p></div>
+          <div class="project-mini-visual chat-mock" aria-hidden="true"><div><i></i><span></span><b>MKS SUP</b></div><div><i></i><span></span></div><div><i></i><span></span><b>MKS TARGET</b></div><div><i></i><span></span></div></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-index">03</div><div class="project-content"><div class="project-tags"><span>FiveM</span><span>Lua</span><span>Web</span><span>Tebex</span></div><h3>M4I Store</h3><p data-i18n="work.store">A premium FiveM product ecosystem combining polished storefront UX, licensing, server-side integrations, and custom resources for modern RP servers.</p></div>
+          <div class="project-mini-visual store-mock" aria-hidden="true"><div class="store-card"><i></i><span></span><b></b></div><div class="store-card"><i></i><span></span><b></b></div><div class="store-card"><i></i><span></span><b></b></div></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-index">04</div><div class="project-content"><div class="project-tags"><span>Linux</span><span>Minecraft</span><span>Ops</span></div><h3>MKS Nexus</h3><p data-i18n="work.nexus">A self-hosted Minecraft environment with infrastructure planning, mod compatibility, server operations, and custom gameplay automation.</p></div>
+          <div class="project-mini-visual infra-mock" aria-hidden="true"><div class="server"><i></i><i></i><span></span></div><div class="server"><i></i><i></i><span></span></div><div class="server"><i></i><i></i><span></span></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="stack shell section-pad" id="stack" aria-labelledby="stack-title">
+      <div class="section-heading reveal"><span class="section-number">03</span><div><p class="kicker" data-i18n="stack.kicker">TOOLKIT</p><h2 id="stack-title" data-i18n="stack.title">What I work with.</h2></div></div>
+      <div class="stack-grid">
+        <article class="stack-card reveal"><span class="stack-icon">&lt;/&gt;</span><h3 data-i18n="stack.webTitle">Web & Product</h3><p>JavaScript · TypeScript · PHP · Laravel · HTML · CSS · Responsive UI</p></article>
+        <article class="stack-card reveal"><span class="stack-icon">API</span><h3 data-i18n="stack.apiTitle">Backend & Integrations</h3><p>REST APIs · OAuth 2.0 · Discord · Kick · Webhooks · MySQL · Redis</p></article>
+        <article class="stack-card reveal"><span class="stack-icon">OPS</span><h3 data-i18n="stack.opsTitle">Systems & Operations</h3><p>Ubuntu · Nginx · TLS · GitHub · CI/CD · Monitoring · Server automation</p></article>
+        <article class="stack-card reveal"><span class="stack-icon">FX</span><h3 data-i18n="stack.gameTitle">Game Ecosystems</h3><p>FiveM · Lua · CFX · Tebex · Minecraft · Fabric · Server tooling</p></article>
+      </div>
+    </section>
+
+    <section class="contact shell section-pad" id="contact" aria-labelledby="contact-title">
+      <div class="contact-card reveal">
+        <div class="contact-orb" aria-hidden="true"></div><p class="kicker" data-i18n="contact.kicker">LET’S BUILD</p><h2 id="contact-title" data-i18n="contact.title">Have something ambitious in mind?</h2><p data-i18n="contact.body">I’m interested in products where software has to solve a real operational problem — not just look good in a screenshot.</p>
+        <a class="button primary large" href="https://github.com/m4i-store" target="_blank" rel="noreferrer"><span data-i18n="contact.cta">Connect on GitHub</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <div class="footer-brand"><span class="brand-mark small">M</span><strong>MOMO.</strong></div><p>© <span id="year"></span> MOMO · <span data-i18n="footer.copy">Built with care, shipped with Git.</span></p><a href="#top" class="back-top"><span data-i18n="footer.top">Back to top</span> ↑</a>
+  </footer>
+  <script src="./script.js" defer></script>
+</body>
+</html>
