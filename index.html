@@ -3,183 +3,42 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#07090d" />
-  <meta name="description" content="MOMO — Full-stack developer building community platforms, automation systems, FiveM products, and scalable web experiences." />
-  <meta property="og:title" content="MOMO — Developer Portfolio" />
-  <meta property="og:description" content="Full-stack development, automation, integrations, FiveM, and infrastructure." />
+  <meta name="theme-color" content="#080604" />
+  <meta name="description" content="MOMO / M4I — developer portfolio and project ecosystem. Full-stack platforms, FiveM systems, automation, community products and infrastructure." />
+  <meta property="og:title" content="MOMO / M4I — Projects & Systems" />
+  <meta property="og:description" content="Explore the products, systems and platforms built by MOMO under the M4I identity." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/273487446?v=4" />
-  <title>MOMO — Developer Portfolio</title>
+  <title>MOMO / M4I — Projects & Systems</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="cursor-glow" aria-hidden="true"></div>
-
+  <div class="ambient ambient-a" aria-hidden="true"></div><div class="ambient ambient-b" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
   <header class="site-header" id="top">
     <nav class="nav shell" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="MOMO home">
-        <span class="brand-mark">M</span>
-        <span class="brand-copy">MOMO<span class="brand-dot">.</span></span>
-      </a>
-
-      <div class="nav-links" id="navLinks">
-        <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#work" data-i18n="nav.work">Work</a>
-        <a href="#stack" data-i18n="nav.stack">Stack</a>
-        <a href="#contact" data-i18n="nav.contact">Contact</a>
-      </div>
-
-      <div class="nav-actions">
-        <button class="icon-button language-toggle" id="languageToggle" type="button" aria-label="Switch language" title="Switch language">
-          <span id="languageLabel">AR</span>
-        </button>
-        <button class="icon-button" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme">
-          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.66-5.66 1.42-1.42M4.92 19.08l1.42-1.42m0-11.32L4.92 4.92m14.16 14.16-1.42-1.42M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
-          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.8A8.5 8.5 0 0 1 8.2 3.5 8.5 8.5 0 1 0 20.5 15.8Z"/></svg>
-        </button>
-        <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-          <span></span><span></span>
-        </button>
-      </div>
+      <a class="brand" href="#top" aria-label="MOMO M4I home"><img src="https://avatars.githubusercontent.com/u/273487446?v=4" alt="M4I logo" width="46" height="46" /><span class="brand-copy"><strong>MOMO</strong><small>/ M4I</small></span></a>
+      <div class="nav-links" id="navLinks"><a href="#projects" data-i18n="nav.projects">Projects</a><a href="#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a><a href="#about" data-i18n="nav.about">About</a><a href="#contact" data-i18n="nav.contact">Contact</a></div>
+      <div class="nav-actions"><button class="pill-button language-toggle" id="languageToggle" type="button" aria-label="Switch language"><span id="languageLabel">AR</span></button><button class="icon-button" id="themeToggle" type="button" aria-label="Switch theme"><svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.66-5.66 1.42-1.42M4.92 19.08l1.42-1.42m0-11.32L4.92 4.92m14.16 14.16-1.42-1.42M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg><svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.8A8.5 8.5 0 0 1 8.2 3.5 8.5 8.5 0 1 0 20.5 15.8Z"/></svg></button><button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button></div>
     </nav>
   </header>
-
   <main id="main">
-    <section class="hero shell section-pad" aria-labelledby="hero-title">
-      <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="status-dot"></span><span data-i18n="hero.available">Available for ambitious builds</span></div>
-        <h1 id="hero-title">
-          <span data-i18n="hero.line1">I build systems that</span>
-          <span class="gradient-text" data-i18n="hero.line2">work in the real world.</span>
-        </h1>
-        <p class="hero-lede" data-i18n="hero.lede">Full-stack developer focused on scalable community platforms, automation, integrations, FiveM products, and infrastructure.</p>
-
-        <div class="hero-cta">
-          <a class="button primary" href="#work">
-            <span data-i18n="hero.ctaWork">Explore my work</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-          </a>
-          <a class="button ghost" href="https://github.com/m4i-store" target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03A9.5 9.5 0 0 1 12 6.84a9.5 9.5 0 0 1 2.5.34c1.91-1.3 2.75-1.03 2.75-1.03.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.35 4.68-4.58 4.93.36.31.68.92.68 1.86V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
-            <span>GitHub</span>
-          </a>
-        </div>
-
-        <div class="hero-meta" aria-label="Quick profile">
-          <div><span class="meta-label" data-i18n="hero.roleLabel">ROLE</span><strong data-i18n="hero.role">Full-stack Developer</strong></div>
-          <div><span class="meta-label" data-i18n="hero.baseLabel">BASE</span><strong data-i18n="hero.base">Morocco · Remote</strong></div>
-          <div><span class="meta-label" data-i18n="hero.focusLabel">FOCUS</span><strong data-i18n="hero.focus">Product + Systems</strong></div>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal" aria-label="Developer profile card">
-        <div class="orb orb-a" aria-hidden="true"></div>
-        <div class="orb orb-b" aria-hidden="true"></div>
-        <div class="profile-card glass tilt-card">
-          <div class="profile-topline">
-            <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-            <span class="mono">momo.dev</span>
-          </div>
-          <div class="avatar-wrap">
-            <img src="https://avatars.githubusercontent.com/u/273487446?v=4" alt="M4I Store GitHub avatar" width="180" height="180" />
-            <div class="avatar-ring" aria-hidden="true"></div>
-          </div>
-          <div class="profile-name">
-            <p class="mono">@m4i-store</p>
-            <h2>MOMO</h2>
-            <p data-i18n="card.tagline">Building reliable digital products from interface to infrastructure.</p>
-          </div>
-          <div class="terminal" aria-label="Developer terminal preview">
-            <div><span class="prompt">$</span><span data-i18n="terminal.one">ship --quality production</span></div>
-            <div><span class="prompt">$</span><span data-i18n="terminal.two">scale --without chaos</span></div>
-            <div><span class="prompt">$</span><span data-i18n="terminal.three">automate --repetitive work</span><span class="caret">_</span></div>
-          </div>
-        </div>
-      </div>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy reveal"><div class="hero-badge"><span class="live-dot"></span><span data-i18n="hero.badge">M4I PROJECT ECOSYSTEM</span></div><p class="hero-kicker" data-i18n="hero.kicker">MOMO — Developer & Product Builder</p><h1 id="hero-title"><span data-i18n="hero.titleA">I build the systems</span><span class="brand-gradient" data-i18n="hero.titleB">behind M4I.</span></h1><p class="hero-lede" data-i18n="hero.lede">This is the home of my work: production platforms, FiveM infrastructure, community products, automation tools, desktop apps and the systems connecting them together.</p><div class="hero-actions"><a class="button primary" href="#projects"><span data-i18n="hero.explore">Explore projects</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="button secondary" href="https://github.com/m4i-store" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03A9.5 9.5 0 0 1 12 6.84a9.5 9.5 0 0 1 2.5.34c1.91-1.3 2.75-1.03 2.75-1.03.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.35 4.68-4.58 4.93.36.31.68.92.68 1.86V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg><span>GitHub</span></a></div><div class="hero-trust"><div><strong>10+</strong><span data-i18n="hero.stat1">active builds & systems</span></div><div><strong>Full-stack</strong><span data-i18n="hero.stat2">product → backend → ops</span></div><div><strong>Morocco</strong><span data-i18n="hero.stat3">building for global users</span></div></div></div>
+      <div class="identity-stage reveal" aria-label="M4I identity visual"><div class="identity-orbit orbit-one" aria-hidden="true"></div><div class="identity-orbit orbit-two" aria-hidden="true"></div><div class="identity-card"><div class="identity-glow" aria-hidden="true"></div><div class="identity-top"><span class="mono">M4I / IDENTITY</span><span class="online"><i></i>ONLINE</span></div><div class="logo-frame"><img src="https://avatars.githubusercontent.com/u/273487446?v=4" alt="M4I brand logo" width="260" height="260" /></div><div class="identity-copy"><span class="mono">@m4i-store</span><h2>MOMO</h2><p data-i18n="identity.tagline">One identity. Multiple products. One connected ecosystem.</p></div><div class="identity-nodes" aria-label="M4I ecosystem areas"><span>CORE</span><span>STORE</span><span>WEB</span><span>TOOLS</span><span>OPS</span></div></div><div class="floating-chip chip-a"><span>API</span><b>CONNECTED</b></div><div class="floating-chip chip-b"><span>FIVEM</span><b>BRIDGE</b></div><div class="floating-chip chip-c"><span>WEB</span><b>PRODUCT</b></div></div>
     </section>
-
-    <section class="marquee-wrap" aria-label="Specialties">
-      <div class="marquee"><div class="marquee-track">
-        <span>FULL-STACK</span><i>✦</i><span>AUTOMATION</span><i>✦</i><span>FIVEM</span><i>✦</i><span>DISCORD</span><i>✦</i><span>APIs</span><i>✦</i><span>LINUX</span><i>✦</i><span>FULL-STACK</span><i>✦</i><span>AUTOMATION</span><i>✦</i><span>FIVEM</span><i>✦</i><span>DISCORD</span><i>✦</i><span>APIs</span><i>✦</i><span>LINUX</span><i>✦</i>
-      </div></div>
-    </section>
-
-    <section class="about shell section-pad" id="about" aria-labelledby="about-title">
-      <div class="section-heading reveal">
-        <span class="section-number">01</span><div><p class="kicker" data-i18n="about.kicker">ABOUT</p><h2 id="about-title" data-i18n="about.title">From idea to production.</h2></div>
-      </div>
-      <div class="about-grid">
-        <div class="about-copy reveal">
-          <p class="about-lead" data-i18n="about.lead">I care about the whole system — product experience, backend logic, integrations, deployment, monitoring, and the boring edge cases that make software dependable.</p>
-          <p data-i18n="about.body">My work sits where web platforms, communities, game ecosystems, and automation meet. I like turning complicated workflows into clear interfaces and maintainable services.</p>
-        </div>
-        <div class="principles reveal">
-          <article class="principle"><span>01</span><div><h3 data-i18n="about.p1Title">Build for reality</h3><p data-i18n="about.p1Body">Design around actual users, permissions, failures, and operational constraints.</p></div></article>
-          <article class="principle"><span>02</span><div><h3 data-i18n="about.p2Title">Automate the repeatable</h3><p data-i18n="about.p2Body">Remove repetitive work while keeping important decisions visible and auditable.</p></div></article>
-          <article class="principle"><span>03</span><div><h3 data-i18n="about.p3Title">Ship with ownership</h3><p data-i18n="about.p3Body">Treat performance, security, deployment, and polish as part of the product.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="work shell section-pad" id="work" aria-labelledby="work-title">
-      <div class="section-heading reveal">
-        <span class="section-number">02</span><div><p class="kicker" data-i18n="work.kicker">SELECTED WORK</p><h2 id="work-title" data-i18n="work.title">Systems I’m building.</h2></div>
-      </div>
-      <div class="project-grid">
-        <article class="project-card project-featured reveal">
-          <div class="project-index">01</div>
-          <div class="project-content">
-            <div class="project-tags"><span>Laravel</span><span>OAuth</span><span>REST API</span><span>Infrastructure</span></div>
-            <h3>MKS Core & Portal</h3>
-            <p data-i18n="work.mks">A community operations platform connecting member identity, licensing, permissions, provisioning, Discord OAuth, and admin workflows through a central core API.</p>
-            <ul class="project-points"><li data-i18n="work.mks1">Role and scope based access control</li><li data-i18n="work.mks2">Idempotent provisioning and license flows</li><li data-i18n="work.mks3">Discord identity and guild integrations</li></ul>
-          </div>
-          <div class="project-visual dashboard-mock" aria-hidden="true">
-            <div class="mock-sidebar"><div class="mock-logo"></div><span></span><span></span><span></span><span></span></div>
-            <div class="mock-main"><div class="mock-bar"></div><div class="mock-stats"><i></i><i></i><i></i></div><div class="mock-chart"><span></span></div><div class="mock-table"><b></b><b></b><b></b><b></b></div></div>
-          </div>
-        </article>
-        <article class="project-card reveal">
-          <div class="project-index">02</div><div class="project-content"><div class="project-tags"><span>Browser</span><span>JavaScript</span><span>Automation</span></div><h3>MKS Chat Tracker</h3><p data-i18n="work.tracker">A Kick-focused tracking and highlighting tool for community operations, designed around fast account recognition, visual tagging, and scalable client-side performance.</p></div>
-          <div class="project-mini-visual chat-mock" aria-hidden="true"><div><i></i><span></span><b>MKS SUP</b></div><div><i></i><span></span></div><div><i></i><span></span><b>MKS TARGET</b></div><div><i></i><span></span></div></div>
-        </article>
-        <article class="project-card reveal">
-          <div class="project-index">03</div><div class="project-content"><div class="project-tags"><span>FiveM</span><span>Lua</span><span>Web</span><span>Tebex</span></div><h3>M4I Store</h3><p data-i18n="work.store">A premium FiveM product ecosystem combining polished storefront UX, licensing, server-side integrations, and custom resources for modern RP servers.</p></div>
-          <div class="project-mini-visual store-mock" aria-hidden="true"><div class="store-card"><i></i><span></span><b></b></div><div class="store-card"><i></i><span></span><b></b></div><div class="store-card"><i></i><span></span><b></b></div></div>
-        </article>
-        <article class="project-card reveal">
-          <div class="project-index">04</div><div class="project-content"><div class="project-tags"><span>Linux</span><span>Minecraft</span><span>Ops</span></div><h3>MKS Nexus</h3><p data-i18n="work.nexus">A self-hosted Minecraft environment with infrastructure planning, mod compatibility, server operations, and custom gameplay automation.</p></div>
-          <div class="project-mini-visual infra-mock" aria-hidden="true"><div class="server"><i></i><i></i><span></span></div><div class="server"><i></i><i></i><span></span></div><div class="server"><i></i><i></i><span></span></div></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="stack shell section-pad" id="stack" aria-labelledby="stack-title">
-      <div class="section-heading reveal"><span class="section-number">03</span><div><p class="kicker" data-i18n="stack.kicker">TOOLKIT</p><h2 id="stack-title" data-i18n="stack.title">What I work with.</h2></div></div>
-      <div class="stack-grid">
-        <article class="stack-card reveal"><span class="stack-icon">&lt;/&gt;</span><h3 data-i18n="stack.webTitle">Web & Product</h3><p>JavaScript · TypeScript · PHP · Laravel · HTML · CSS · Responsive UI</p></article>
-        <article class="stack-card reveal"><span class="stack-icon">API</span><h3 data-i18n="stack.apiTitle">Backend & Integrations</h3><p>REST APIs · OAuth 2.0 · Discord · Kick · Webhooks · MySQL · Redis</p></article>
-        <article class="stack-card reveal"><span class="stack-icon">OPS</span><h3 data-i18n="stack.opsTitle">Systems & Operations</h3><p>Ubuntu · Nginx · TLS · GitHub · CI/CD · Monitoring · Server automation</p></article>
-        <article class="stack-card reveal"><span class="stack-icon">FX</span><h3 data-i18n="stack.gameTitle">Game Ecosystems</h3><p>FiveM · Lua · CFX · Tebex · Minecraft · Fabric · Server tooling</p></article>
-      </div>
-    </section>
-
-    <section class="contact shell section-pad" id="contact" aria-labelledby="contact-title">
-      <div class="contact-card reveal">
-        <div class="contact-orb" aria-hidden="true"></div><p class="kicker" data-i18n="contact.kicker">LET’S BUILD</p><h2 id="contact-title" data-i18n="contact.title">Have something ambitious in mind?</h2><p data-i18n="contact.body">I’m interested in products where software has to solve a real operational problem — not just look good in a screenshot.</p>
-        <a class="button primary large" href="https://github.com/m4i-store" target="_blank" rel="noreferrer"><span data-i18n="contact.cta">Connect on GitHub</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-      </div>
-    </section>
+    <section class="brand-strip" aria-label="Specialties"><div class="brand-track"><span>FULL-STACK</span><i>◆</i><span>FIVEM SYSTEMS</span><i>◆</i><span>WEB PRODUCTS</span><i>◆</i><span>AUTOMATION</span><i>◆</i><span>DISCORD</span><i>◆</i><span>INFRASTRUCTURE</span><i>◆</i><span>DESKTOP APPS</span><i>◆</i><span>FULL-STACK</span><i>◆</i><span>FIVEM SYSTEMS</span><i>◆</i><span>WEB PRODUCTS</span><i>◆</i><span>AUTOMATION</span><i>◆</i><span>DISCORD</span><i>◆</i></div></section>
+    <section class="featured shell section-pad" aria-labelledby="featured-title"><div class="section-heading reveal"><div><span class="section-label" data-i18n="featured.label">FEATURED BUILD</span><h2 id="featured-title" data-i18n="featured.title">A real project, not a mock concept.</h2></div><span class="section-count">01 / LIVE</span></div><article class="featured-project reveal"><div class="featured-media"><img src="https://app.m4i.ma/images/bg-4.png" alt="MKS RolePlay project visual" loading="lazy" onerror="this.parentElement.classList.add('media-fallback');this.remove();" /><div class="featured-overlay"></div><div class="browser-shell" aria-hidden="true"><div class="browser-bar"><i></i><i></i><i></i><span>app.m4i.ma</span></div><div class="browser-content"><div class="browser-logo"><img src="https://app.m4i.ma/images/logo.png" alt="" onerror="this.style.display='none'" /></div><span class="browser-line line-lg"></span><span class="browser-line"></span><span class="browser-line line-sm"></span><div class="browser-buttons"><b></b><b></b></div></div></div></div><div class="featured-copy"><div class="status-row"><span class="project-status live"><i></i> LIVE PROJECT</span><span class="project-year">2026</span></div><h3>MKS RolePlay Platform</h3><p data-i18n="featured.body">A complete Arabic gaming community platform with public pages, applications, streamer surfaces, account flows and an administration layer — deployed as a real product, not a portfolio-only demo.</p><div class="tag-list"><span>React</span><span>Node.js</span><span>Discord OAuth</span><span>Community Platform</span></div><div class="featured-actions"><a class="button primary" href="https://app.m4i.ma/" target="_blank" rel="noreferrer"><span data-i18n="featured.open">Open live project</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a><button class="text-button project-detail-trigger" data-project="roleplay" type="button"><span data-i18n="featured.details">Project details</span><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></div></article></section>
+    <section class="projects shell section-pad" id="projects" aria-labelledby="projects-title"><div class="section-heading reveal"><div><span class="section-label" data-i18n="projects.label">PROJECT INDEX</span><h2 id="projects-title" data-i18n="projects.title">The M4I project ecosystem.</h2><p data-i18n="projects.lede">Public products, private infrastructure and active builds. Private source stays private; the portfolio shows the product, architecture and result.</p></div><span class="section-count" id="projectCount">09 PROJECTS</span></div><div class="project-filters reveal" id="projectFilters" aria-label="Project filters"><button class="filter active" data-filter="all" type="button" data-i18n="filters.all">All</button><button class="filter" data-filter="platform" type="button" data-i18n="filters.platform">Platforms</button><button class="filter" data-filter="fivem" type="button">FiveM</button><button class="filter" data-filter="tool" type="button" data-i18n="filters.tools">Tools & Apps</button><button class="filter" data-filter="ops" type="button" data-i18n="filters.ops">Infrastructure</button></div><div class="project-grid" id="projectGrid"></div></section>
+    <section class="ecosystem shell section-pad" id="ecosystem" aria-labelledby="ecosystem-title"><div class="section-heading reveal"><div><span class="section-label" data-i18n="ecosystem.label">HOW IT CONNECTS</span><h2 id="ecosystem-title" data-i18n="ecosystem.title">More than isolated repositories.</h2></div><span class="section-count">M4I SYSTEM MAP</span></div><div class="system-map reveal"><div class="map-grid" aria-hidden="true"></div><div class="map-core"><img src="https://avatars.githubusercontent.com/u/273487446?v=4" alt="" /><strong>M4I</strong><span>ECOSYSTEM</span></div><div class="map-node node-core"><span>01</span><strong>m4i_core</strong><small data-i18n="map.core">authoritative runtime</small></div><div class="map-node node-bridge"><span>02</span><strong>m4i_bridge</strong><small data-i18n="map.bridge">universal integration</small></div><div class="map-node node-identity"><span>03</span><strong>m4i_identity</strong><small data-i18n="map.identity">identity ownership</small></div><div class="map-node node-store"><span>04</span><strong>M4I Store</strong><small data-i18n="map.store">commerce & products</small></div><div class="map-node node-docs"><span>05</span><strong>M4I Docs</strong><small data-i18n="map.docs">single source of truth</small></div><div class="map-node node-apps"><span>06</span><strong>MKS Apps</strong><small data-i18n="map.apps">community tools</small></div><svg class="map-lines" viewBox="0 0 1000 580" preserveAspectRatio="none" aria-hidden="true"><path d="M500 290 C380 210 280 140 170 110"/><path d="M500 290 C620 210 720 140 830 110"/><path d="M500 290 C320 290 220 290 120 290"/><path d="M500 290 C680 290 780 290 880 290"/><path d="M500 290 C380 380 280 440 170 480"/><path d="M500 290 C620 380 720 440 830 480"/></svg></div></section>
+    <section class="about shell section-pad" id="about" aria-labelledby="about-title"><div class="section-heading reveal"><div><span class="section-label" data-i18n="about.label">ABOUT MOMO</span><h2 id="about-title" data-i18n="about.title">I like owning the whole system.</h2></div><span class="section-count">BUILD → SHIP → OPERATE</span></div><div class="about-layout"><div class="about-story reveal"><p class="about-lead" data-i18n="about.lead">I build products end-to-end: interface, backend, integrations, permissions, deployment and the operational details that decide whether software actually survives production.</p><p data-i18n="about.body">My projects sit between communities, gaming ecosystems and business tooling. The common thread is turning messy real-world workflows into systems that are easier to operate, extend and trust.</p><div class="signature"><span class="signature-line"></span><div><strong>MOMO</strong><small>M4I / Morocco</small></div></div></div><div class="capability-grid reveal"><article><span>01</span><h3 data-i18n="about.c1">Product Engineering</h3><p data-i18n="about.c1b">Interfaces, APIs, auth, state and real user workflows.</p></article><article><span>02</span><h3 data-i18n="about.c2">FiveM Architecture</h3><p data-i18n="about.c2b">Framework-neutral systems, bridges, identity and reusable resources.</p></article><article><span>03</span><h3 data-i18n="about.c3">Automation</h3><p data-i18n="about.c3b">Browser, Discord and desktop workflows that remove repetitive work.</p></article><article><span>04</span><h3 data-i18n="about.c4">Infrastructure</h3><p data-i18n="about.c4b">Linux, deployment, observability and production operations.</p></article></div></div></section>
+    <section class="evidence shell section-pad" aria-labelledby="evidence-title"><div class="section-heading reveal"><div><span class="section-label" data-i18n="evidence.label">REAL WORK</span><h2 id="evidence-title" data-i18n="evidence.title">Public evidence where it makes sense.</h2></div><span class="section-count">NO SOURCE LEAKS</span></div><div class="evidence-grid"><a class="evidence-card docs-card reveal" href="https://github.com/m4i-store/m4i-docs" target="_blank" rel="noreferrer"><div class="evidence-image"><img src="https://opengraph.githubassets.com/1/m4i-store/m4i-docs" alt="M4I Docs GitHub repository preview" loading="lazy" /></div><div class="evidence-copy"><span>PUBLIC REPOSITORY</span><h3>M4I Docs</h3><p data-i18n="evidence.docs">Central documentation for the M4I architecture, core, bridge and shared standards.</p><b data-i18n="evidence.open">Open public source ↗</b></div></a><a class="evidence-card live-card reveal" href="https://app.m4i.ma/" target="_blank" rel="noreferrer"><div class="evidence-image live-image"><img src="https://app.m4i.ma/images/image.png" alt="MKS RolePlay visual" loading="lazy" onerror="this.src='https://app.m4i.ma/images/bg-4.png'" /></div><div class="evidence-copy"><span>LIVE PRODUCT</span><h3>MKS RolePlay</h3><p data-i18n="evidence.roleplay">A deployed community platform running on the M4I infrastructure.</p><b data-i18n="evidence.openLive">Visit live product ↗</b></div></a></div></section>
+    <section class="contact shell section-pad" id="contact" aria-labelledby="contact-title"><div class="contact-panel reveal"><div class="contact-copy"><span class="section-label" data-i18n="contact.label">CONTACT</span><h2 id="contact-title" data-i18n="contact.title">Have a project worth building?</h2><p data-i18n="contact.body">For collaborations, technical work or questions about an M4I project, Discord is the preferred contact channel.</p></div><div class="contact-actions"><button class="contact-card discord pending-contact" type="button" id="discordContact"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M19.5 5.3A16.3 16.3 0 0 0 15.4 4l-.5 1a15 15 0 0 0-5.8 0l-.5-1a16.7 16.7 0 0 0-4.1 1.3C1.9 9.2 1.2 13 1.5 16.8A16.6 16.6 0 0 0 6.6 19l1.2-1.7a10.8 10.8 0 0 1-1.9-.9l.5-.4a11.8 11.8 0 0 0 11.2 0l.5.4a12 12 0 0 1-1.9.9l1.2 1.7a16.4 16.4 0 0 0 5.1-2.2c.4-4.4-.8-8.2-3-11.5ZM8.7 14.5c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Zm6.6 0c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Z"/></svg></span><span><small>DISCORD</small><strong data-i18n="contact.discord">Preferred contact</strong><em data-i18n="contact.pending">Contact link to be connected before launch</em></span><svg class="contact-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button><a class="contact-card github" href="https://github.com/m4i-store" target="_blank" rel="noreferrer"><span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03A9.5 9.5 0 0 1 12 6.84a9.5 9.5 0 0 1 2.5.34c1.91-1.3 2.75-1.03 2.75-1.03.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.35 4.68-4.58 4.93.36.31.68.92.68 1.86V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg></span><span><small>GITHUB</small><strong>@m4i-store</strong><em data-i18n="contact.github">Public code & documentation</em></span><svg class="contact-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></div></section>
   </main>
-
-  <footer class="footer shell">
-    <div class="footer-brand"><span class="brand-mark small">M</span><strong>MOMO.</strong></div><p>© <span id="year"></span> MOMO · <span data-i18n="footer.copy">Built with care, shipped with Git.</span></p><a href="#top" class="back-top"><span data-i18n="footer.top">Back to top</span> ↑</a>
-  </footer>
-  <script src="./script.js" defer></script>
+  <footer class="footer"><div class="shell footer-inner"><a class="footer-brand" href="#top"><img src="https://avatars.githubusercontent.com/u/273487446?v=4" alt="M4I" /><span><strong>MOMO / M4I</strong><small data-i18n="footer.tag">Products. Systems. Infrastructure.</small></span></a><div class="footer-meta"><span>© <span id="year"></span> MOMO</span><span>Morocco</span><a href="https://github.com/m4i-store" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></footer>
+  <div class="project-modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-backdrop" data-close-modal></div><div class="modal-panel"><button class="modal-close" type="button" aria-label="Close project details" data-close-modal>×</button><div class="modal-head"><span class="modal-index" id="modalIndex">01</span><div><span class="project-status" id="modalStatus"></span><h2 id="modalTitle"></h2><p id="modalSummary"></p></div></div><div class="modal-layout"><div><h3 data-i18n="modal.built">What I built</h3><ul id="modalPoints"></ul></div><div><h3 data-i18n="modal.stack">Stack / Scope</h3><div class="tag-list" id="modalTags"></div><div class="modal-links" id="modalLinks"></div></div></div></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div><script src="./script.js"></script>
 </body>
 </html>
