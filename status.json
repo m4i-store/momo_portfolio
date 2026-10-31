@@ -1,0 +1,977 @@
+{
+  "schema": 2,
+  "generated_at": "2026-10-31T17:57:18Z",
+  "generated_at_ts": 1793469438,
+  "monitor": {
+    "provider": "GitHub Actions",
+    "cadence_minutes": 5,
+    "retries_per_check": 3,
+    "timeout_seconds": 8,
+    "history_window_hours": 72,
+    "degraded_latency_ms": 1800
+  },
+  "overall": {
+    "state": "partial_outage",
+    "down_services": [
+      "hosting",
+      "delta"
+    ],
+    "degraded_services": [],
+    "open_incidents": 2
+  },
+  "services": {
+    "store": {
+      "id": "store",
+      "name": "M4I Store",
+      "url": "https://store.m4i.ma/",
+      "kind": "M4I Product",
+      "critical": true,
+      "state": "operational",
+      "latency_ms": 1146,
+      "http_status": 200,
+      "error": null,
+      "checked_at": "2026-10-31T17:57:18Z",
+      "checked_at_ts": 1793469438,
+      "attempts": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "latency_ms": 1146,
+          "error": null
+        }
+      ],
+      "availability_72h": 100.0,
+      "history": [
+        {
+          "ts": 1793216458,
+          "at": "2026-10-28T19:40:58Z",
+          "state": "operational",
+          "latency_ms": 683,
+          "http_status": 200
+        },
+        {
+          "ts": 1793230340,
+          "at": "2026-10-28T23:32:20Z",
+          "state": "operational",
+          "latency_ms": 601,
+          "http_status": 200
+        },
+        {
+          "ts": 1793241862,
+          "at": "2026-10-29T02:44:22Z",
+          "state": "operational",
+          "latency_ms": 966,
+          "http_status": 200
+        },
+        {
+          "ts": 1793264144,
+          "at": "2026-10-29T08:55:44Z",
+          "state": "operational",
+          "latency_ms": 567,
+          "http_status": 200
+        },
+        {
+          "ts": 1793288759,
+          "at": "2026-10-29T15:45:59Z",
+          "state": "operational",
+          "latency_ms": 629,
+          "http_status": 200
+        },
+        {
+          "ts": 1793306392,
+          "at": "2026-10-29T20:39:52Z",
+          "state": "operational",
+          "latency_ms": 623,
+          "http_status": 200
+        },
+        {
+          "ts": 1793319639,
+          "at": "2026-10-30T00:20:39Z",
+          "state": "operational",
+          "latency_ms": 780,
+          "http_status": 200
+        },
+        {
+          "ts": 1793340093,
+          "at": "2026-10-30T06:01:33Z",
+          "state": "operational",
+          "latency_ms": 871,
+          "http_status": 200
+        },
+        {
+          "ts": 1793364021,
+          "at": "2026-10-30T12:40:21Z",
+          "state": "operational",
+          "latency_ms": 508,
+          "http_status": 200
+        },
+        {
+          "ts": 1793383933,
+          "at": "2026-10-30T18:12:13Z",
+          "state": "operational",
+          "latency_ms": 615,
+          "http_status": 200
+        },
+        {
+          "ts": 1793398624,
+          "at": "2026-10-30T22:17:04Z",
+          "state": "operational",
+          "latency_ms": 535,
+          "http_status": 200
+        },
+        {
+          "ts": 1793410662,
+          "at": "2026-10-31T01:37:42Z",
+          "state": "operational",
+          "latency_ms": 710,
+          "http_status": 200
+        },
+        {
+          "ts": 1793431699,
+          "at": "2026-10-31T07:28:19Z",
+          "state": "operational",
+          "latency_ms": 474,
+          "http_status": 200
+        },
+        {
+          "ts": 1793454427,
+          "at": "2026-10-31T13:47:07Z",
+          "state": "operational",
+          "latency_ms": 484,
+          "http_status": 200
+        },
+        {
+          "ts": 1793469438,
+          "at": "2026-10-31T17:57:18Z",
+          "state": "operational",
+          "latency_ms": 1146,
+          "http_status": 200
+        }
+      ]
+    },
+    "hosting": {
+      "id": "hosting",
+      "name": "M4I Hosting",
+      "url": "https://hostingg.m4i.ma/",
+      "kind": "M4I Product",
+      "critical": true,
+      "state": "major_outage",
+      "latency_ms": 554,
+      "http_status": 503,
+      "error": "HTTP 503",
+      "checked_at": "2026-10-31T17:57:18Z",
+      "checked_at_ts": 1793469438,
+      "attempts": [
+        {
+          "attempt": 1,
+          "http_status": 503,
+          "latency_ms": 647,
+          "error": "HTTP 503"
+        },
+        {
+          "attempt": 2,
+          "http_status": 503,
+          "latency_ms": 524,
+          "error": "HTTP 503"
+        },
+        {
+          "attempt": 3,
+          "http_status": 503,
+          "latency_ms": 554,
+          "error": "HTTP 503"
+        }
+      ],
+      "availability_72h": 0.0,
+      "history": [
+        {
+          "ts": 1793216458,
+          "at": "2026-10-28T19:40:58Z",
+          "state": "major_outage",
+          "latency_ms": 698,
+          "http_status": 503
+        },
+        {
+          "ts": 1793230340,
+          "at": "2026-10-28T23:32:20Z",
+          "state": "major_outage",
+          "latency_ms": 365,
+          "http_status": 503
+        },
+        {
+          "ts": 1793241862,
+          "at": "2026-10-29T02:44:22Z",
+          "state": "major_outage",
+          "latency_ms": 723,
+          "http_status": 503
+        },
+        {
+          "ts": 1793264144,
+          "at": "2026-10-29T08:55:44Z",
+          "state": "major_outage",
+          "latency_ms": 552,
+          "http_status": 503
+        },
+        {
+          "ts": 1793288759,
+          "at": "2026-10-29T15:45:59Z",
+          "state": "major_outage",
+          "latency_ms": 602,
+          "http_status": 503
+        },
+        {
+          "ts": 1793306392,
+          "at": "2026-10-29T20:39:52Z",
+          "state": "major_outage",
+          "latency_ms": 441,
+          "http_status": 503
+        },
+        {
+          "ts": 1793319639,
+          "at": "2026-10-30T00:20:39Z",
+          "state": "major_outage",
+          "latency_ms": 471,
+          "http_status": 503
+        },
+        {
+          "ts": 1793340093,
+          "at": "2026-10-30T06:01:33Z",
+          "state": "major_outage",
+          "latency_ms": 382,
+          "http_status": 503
+        },
+        {
+          "ts": 1793364021,
+          "at": "2026-10-30T12:40:21Z",
+          "state": "major_outage",
+          "latency_ms": 549,
+          "http_status": 503
+        },
+        {
+          "ts": 1793383933,
+          "at": "2026-10-30T18:12:13Z",
+          "state": "major_outage",
+          "latency_ms": 596,
+          "http_status": 503
+        },
+        {
+          "ts": 1793398624,
+          "at": "2026-10-30T22:17:04Z",
+          "state": "major_outage",
+          "latency_ms": 721,
+          "http_status": 503
+        },
+        {
+          "ts": 1793410662,
+          "at": "2026-10-31T01:37:42Z",
+          "state": "major_outage",
+          "latency_ms": 727,
+          "http_status": 503
+        },
+        {
+          "ts": 1793431699,
+          "at": "2026-10-31T07:28:19Z",
+          "state": "major_outage",
+          "latency_ms": 489,
+          "http_status": 503
+        },
+        {
+          "ts": 1793454427,
+          "at": "2026-10-31T13:47:07Z",
+          "state": "major_outage",
+          "latency_ms": 518,
+          "http_status": 503
+        },
+        {
+          "ts": 1793469438,
+          "at": "2026-10-31T17:57:18Z",
+          "state": "major_outage",
+          "latency_ms": 554,
+          "http_status": 503
+        }
+      ]
+    },
+    "app": {
+      "id": "app",
+      "name": "MKS RolePlay",
+      "url": "https://app.m4i.ma/",
+      "kind": "M4I Platform",
+      "critical": true,
+      "state": "operational",
+      "latency_ms": 586,
+      "http_status": 200,
+      "error": null,
+      "checked_at": "2026-10-31T17:57:18Z",
+      "checked_at_ts": 1793469438,
+      "attempts": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "latency_ms": 586,
+          "error": null
+        }
+      ],
+      "availability_72h": 100.0,
+      "history": [
+        {
+          "ts": 1793216458,
+          "at": "2026-10-28T19:40:58Z",
+          "state": "operational",
+          "latency_ms": 610,
+          "http_status": 200
+        },
+        {
+          "ts": 1793230340,
+          "at": "2026-10-28T23:32:20Z",
+          "state": "operational",
+          "latency_ms": 549,
+          "http_status": 200
+        },
+        {
+          "ts": 1793241862,
+          "at": "2026-10-29T02:44:22Z",
+          "state": "operational",
+          "latency_ms": 853,
+          "http_status": 200
+        },
+        {
+          "ts": 1793264144,
+          "at": "2026-10-29T08:55:44Z",
+          "state": "operational",
+          "latency_ms": 516,
+          "http_status": 200
+        },
+        {
+          "ts": 1793288759,
+          "at": "2026-10-29T15:45:59Z",
+          "state": "operational",
+          "latency_ms": 617,
+          "http_status": 200
+        },
+        {
+          "ts": 1793306392,
+          "at": "2026-10-29T20:39:52Z",
+          "state": "operational",
+          "latency_ms": 552,
+          "http_status": 200
+        },
+        {
+          "ts": 1793319639,
+          "at": "2026-10-30T00:20:39Z",
+          "state": "operational",
+          "latency_ms": 771,
+          "http_status": 200
+        },
+        {
+          "ts": 1793340093,
+          "at": "2026-10-30T06:01:33Z",
+          "state": "operational",
+          "latency_ms": 915,
+          "http_status": 200
+        },
+        {
+          "ts": 1793364021,
+          "at": "2026-10-30T12:40:21Z",
+          "state": "operational",
+          "latency_ms": 479,
+          "http_status": 200
+        },
+        {
+          "ts": 1793383933,
+          "at": "2026-10-30T18:12:13Z",
+          "state": "operational",
+          "latency_ms": 507,
+          "http_status": 200
+        },
+        {
+          "ts": 1793398624,
+          "at": "2026-10-30T22:17:04Z",
+          "state": "operational",
+          "latency_ms": 528,
+          "http_status": 200
+        },
+        {
+          "ts": 1793410662,
+          "at": "2026-10-31T01:37:42Z",
+          "state": "operational",
+          "latency_ms": 675,
+          "http_status": 200
+        },
+        {
+          "ts": 1793431699,
+          "at": "2026-10-31T07:28:19Z",
+          "state": "operational",
+          "latency_ms": 600,
+          "http_status": 200
+        },
+        {
+          "ts": 1793454427,
+          "at": "2026-10-31T13:47:07Z",
+          "state": "operational",
+          "latency_ms": 451,
+          "http_status": 200
+        },
+        {
+          "ts": 1793469438,
+          "at": "2026-10-31T17:57:18Z",
+          "state": "operational",
+          "latency_ms": 586,
+          "http_status": 200
+        }
+      ]
+    },
+    "mks": {
+      "id": "mks",
+      "name": "MKS Platform",
+      "url": "https://mks.m4i.ma/",
+      "kind": "M4I Platform",
+      "critical": true,
+      "state": "operational",
+      "latency_ms": 630,
+      "http_status": 200,
+      "error": null,
+      "checked_at": "2026-10-31T17:57:18Z",
+      "checked_at_ts": 1793469438,
+      "attempts": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "latency_ms": 630,
+          "error": null
+        }
+      ],
+      "availability_72h": 100.0,
+      "history": [
+        {
+          "ts": 1793216458,
+          "at": "2026-10-28T19:40:58Z",
+          "state": "operational",
+          "latency_ms": 725,
+          "http_status": 200
+        },
+        {
+          "ts": 1793230340,
+          "at": "2026-10-28T23:32:20Z",
+          "state": "operational",
+          "latency_ms": 673,
+          "http_status": 200
+        },
+        {
+          "ts": 1793241862,
+          "at": "2026-10-29T02:44:22Z",
+          "state": "operational",
+          "latency_ms": 719,
+          "http_status": 200
+        },
+        {
+          "ts": 1793264144,
+          "at": "2026-10-29T08:55:44Z",
+          "state": "operational",
+          "latency_ms": 569,
+          "http_status": 200
+        },
+        {
+          "ts": 1793288759,
+          "at": "2026-10-29T15:45:59Z",
+          "state": "operational",
+          "latency_ms": 647,
+          "http_status": 200
+        },
+        {
+          "ts": 1793306392,
+          "at": "2026-10-29T20:39:52Z",
+          "state": "degraded",
+          "latency_ms": 1901,
+          "http_status": 200
+        },
+        {
+          "ts": 1793319639,
+          "at": "2026-10-30T00:20:39Z",
+          "state": "operational",
+          "latency_ms": 798,
+          "http_status": 200
+        },
+        {
+          "ts": 1793340093,
+          "at": "2026-10-30T06:01:33Z",
+          "state": "operational",
+          "latency_ms": 639,
+          "http_status": 200
+        },
+        {
+          "ts": 1793364021,
+          "at": "2026-10-30T12:40:21Z",
+          "state": "operational",
+          "latency_ms": 524,
+          "http_status": 200
+        },
+        {
+          "ts": 1793383933,
+          "at": "2026-10-30T18:12:13Z",
+          "state": "operational",
+          "latency_ms": 587,
+          "http_status": 200
+        },
+        {
+          "ts": 1793398624,
+          "at": "2026-10-30T22:17:04Z",
+          "state": "operational",
+          "latency_ms": 629,
+          "http_status": 200
+        },
+        {
+          "ts": 1793410662,
+          "at": "2026-10-31T01:37:42Z",
+          "state": "operational",
+          "latency_ms": 771,
+          "http_status": 200
+        },
+        {
+          "ts": 1793431699,
+          "at": "2026-10-31T07:28:19Z",
+          "state": "operational",
+          "latency_ms": 478,
+          "http_status": 200
+        },
+        {
+          "ts": 1793454427,
+          "at": "2026-10-31T13:47:07Z",
+          "state": "operational",
+          "latency_ms": 429,
+          "http_status": 200
+        },
+        {
+          "ts": 1793469438,
+          "at": "2026-10-31T17:57:18Z",
+          "state": "operational",
+          "latency_ms": 630,
+          "http_status": 200
+        }
+      ]
+    },
+    "dashboard": {
+      "id": "dashboard",
+      "name": "M4I Dashboard",
+      "url": "https://dashboard.m4i.ma/",
+      "kind": "Operations",
+      "critical": true,
+      "state": "operational",
+      "latency_ms": 461,
+      "http_status": 200,
+      "error": null,
+      "checked_at": "2026-10-31T17:57:18Z",
+      "checked_at_ts": 1793469438,
+      "attempts": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "latency_ms": 461,
+          "error": null
+        }
+      ],
+      "availability_72h": 100.0,
+      "history": [
+        {
+          "ts": 1793216458,
+          "at": "2026-10-28T19:40:58Z",
+          "state": "operational",
+          "latency_ms": 755,
+          "http_status": 200
+        },
+        {
+          "ts": 1793230340,
+          "at": "2026-10-28T23:32:20Z",
+          "state": "operational",
+          "latency_ms": 517,
+          "http_status": 200
+        },
+        {
+          "ts": 1793241862,
+          "at": "2026-10-29T02:44:22Z",
+          "state": "operational",
+          "latency_ms": 919,
+          "http_status": 200
+        },
+        {
+          "ts": 1793264144,
+          "at": "2026-10-29T08:55:44Z",
+          "state": "operational",
+          "latency_ms": 586,
+          "http_status": 200
+        },
+        {
+          "ts": 1793288759,
+          "at": "2026-10-29T15:45:59Z",
+          "state": "operational",
+          "latency_ms": 712,
+          "http_status": 200
+        },
+        {
+          "ts": 1793306392,
+          "at": "2026-10-29T20:39:52Z",
+          "state": "operational",
+          "latency_ms": 656,
+          "http_status": 200
+        },
+        {
+          "ts": 1793319639,
+          "at": "2026-10-30T00:20:39Z",
+          "state": "operational",
+          "latency_ms": 978,
+          "http_status": 200
+        },
+        {
+          "ts": 1793340093,
+          "at": "2026-10-30T06:01:33Z",
+          "state": "operational",
+          "latency_ms": 887,
+          "http_status": 200
+        },
+        {
+          "ts": 1793364021,
+          "at": "2026-10-30T12:40:21Z",
+          "state": "operational",
+          "latency_ms": 637,
+          "http_status": 200
+        },
+        {
+          "ts": 1793383933,
+          "at": "2026-10-30T18:12:13Z",
+          "state": "operational",
+          "latency_ms": 551,
+          "http_status": 200
+        },
+        {
+          "ts": 1793398624,
+          "at": "2026-10-30T22:17:04Z",
+          "state": "operational",
+          "latency_ms": 629,
+          "http_status": 200
+        },
+        {
+          "ts": 1793410662,
+          "at": "2026-10-31T01:37:42Z",
+          "state": "operational",
+          "latency_ms": 582,
+          "http_status": 200
+        },
+        {
+          "ts": 1793431699,
+          "at": "2026-10-31T07:28:19Z",
+          "state": "operational",
+          "latency_ms": 579,
+          "http_status": 200
+        },
+        {
+          "ts": 1793454427,
+          "at": "2026-10-31T13:47:07Z",
+          "state": "operational",
+          "latency_ms": 443,
+          "http_status": 200
+        },
+        {
+          "ts": 1793469438,
+          "at": "2026-10-31T17:57:18Z",
+          "state": "operational",
+          "latency_ms": 461,
+          "http_status": 200
+        }
+      ]
+    },
+    "delta": {
+      "id": "delta",
+      "name": "Delta Ascenseur",
+      "url": "https://delta-ascenseur.m4i.ma/",
+      "kind": "Client Work",
+      "critical": false,
+      "state": "major_outage",
+      "latency_ms": 353,
+      "http_status": 503,
+      "error": "HTTP 503",
+      "checked_at": "2026-10-31T17:57:18Z",
+      "checked_at_ts": 1793469438,
+      "attempts": [
+        {
+          "attempt": 1,
+          "http_status": 503,
+          "latency_ms": 598,
+          "error": "HTTP 503"
+        },
+        {
+          "attempt": 2,
+          "http_status": 503,
+          "latency_ms": 376,
+          "error": "HTTP 503"
+        },
+        {
+          "attempt": 3,
+          "http_status": 503,
+          "latency_ms": 353,
+          "error": "HTTP 503"
+        }
+      ],
+      "availability_72h": 0.0,
+      "history": [
+        {
+          "ts": 1793216458,
+          "at": "2026-10-28T19:40:58Z",
+          "state": "major_outage",
+          "latency_ms": 288,
+          "http_status": 503
+        },
+        {
+          "ts": 1793230340,
+          "at": "2026-10-28T23:32:20Z",
+          "state": "major_outage",
+          "latency_ms": 217,
+          "http_status": 503
+        },
+        {
+          "ts": 1793241862,
+          "at": "2026-10-29T02:44:22Z",
+          "state": "major_outage",
+          "latency_ms": 590,
+          "http_status": 503
+        },
+        {
+          "ts": 1793264144,
+          "at": "2026-10-29T08:55:44Z",
+          "state": "major_outage",
+          "latency_ms": 400,
+          "http_status": 503
+        },
+        {
+          "ts": 1793288759,
+          "at": "2026-10-29T15:45:59Z",
+          "state": "major_outage",
+          "latency_ms": 445,
+          "http_status": 503
+        },
+        {
+          "ts": 1793306392,
+          "at": "2026-10-29T20:39:52Z",
+          "state": "major_outage",
+          "latency_ms": 205,
+          "http_status": 503
+        },
+        {
+          "ts": 1793319639,
+          "at": "2026-10-30T00:20:39Z",
+          "state": "major_outage",
+          "latency_ms": 250,
+          "http_status": 503
+        },
+        {
+          "ts": 1793340093,
+          "at": "2026-10-30T06:01:33Z",
+          "state": "major_outage",
+          "latency_ms": 224,
+          "http_status": 503
+        },
+        {
+          "ts": 1793364021,
+          "at": "2026-10-30T12:40:21Z",
+          "state": "major_outage",
+          "latency_ms": 409,
+          "http_status": 503
+        },
+        {
+          "ts": 1793383933,
+          "at": "2026-10-30T18:12:13Z",
+          "state": "major_outage",
+          "latency_ms": 403,
+          "http_status": 503
+        },
+        {
+          "ts": 1793398624,
+          "at": "2026-10-30T22:17:04Z",
+          "state": "major_outage",
+          "latency_ms": 268,
+          "http_status": 503
+        },
+        {
+          "ts": 1793410662,
+          "at": "2026-10-31T01:37:42Z",
+          "state": "major_outage",
+          "latency_ms": 514,
+          "http_status": 503
+        },
+        {
+          "ts": 1793431699,
+          "at": "2026-10-31T07:28:19Z",
+          "state": "major_outage",
+          "latency_ms": 340,
+          "http_status": 503
+        },
+        {
+          "ts": 1793454427,
+          "at": "2026-10-31T13:47:07Z",
+          "state": "major_outage",
+          "latency_ms": 158,
+          "http_status": 503
+        },
+        {
+          "ts": 1793469438,
+          "at": "2026-10-31T17:57:18Z",
+          "state": "major_outage",
+          "latency_ms": 353,
+          "http_status": 503
+        }
+      ]
+    },
+    "nightmare": {
+      "id": "nightmare",
+      "name": "NIGHTMARE",
+      "url": "https://nightmare.m4i.ma/",
+      "kind": "Client Work",
+      "critical": false,
+      "state": "operational",
+      "latency_ms": 561,
+      "http_status": 200,
+      "error": null,
+      "checked_at": "2026-10-31T17:57:18Z",
+      "checked_at_ts": 1793469438,
+      "attempts": [
+        {
+          "attempt": 1,
+          "http_status": 200,
+          "latency_ms": 561,
+          "error": null
+        }
+      ],
+      "availability_72h": 100.0,
+      "history": [
+        {
+          "ts": 1793216458,
+          "at": "2026-10-28T19:40:58Z",
+          "state": "operational",
+          "latency_ms": 703,
+          "http_status": 200
+        },
+        {
+          "ts": 1793230340,
+          "at": "2026-10-28T23:32:20Z",
+          "state": "operational",
+          "latency_ms": 544,
+          "http_status": 200
+        },
+        {
+          "ts": 1793241862,
+          "at": "2026-10-29T02:44:22Z",
+          "state": "operational",
+          "latency_ms": 771,
+          "http_status": 200
+        },
+        {
+          "ts": 1793264144,
+          "at": "2026-10-29T08:55:44Z",
+          "state": "operational",
+          "latency_ms": 544,
+          "http_status": 200
+        },
+        {
+          "ts": 1793288759,
+          "at": "2026-10-29T15:45:59Z",
+          "state": "operational",
+          "latency_ms": 553,
+          "http_status": 200
+        },
+        {
+          "ts": 1793306392,
+          "at": "2026-10-29T20:39:52Z",
+          "state": "operational",
+          "latency_ms": 1417,
+          "http_status": 200
+        },
+        {
+          "ts": 1793319639,
+          "at": "2026-10-30T00:20:39Z",
+          "state": "operational",
+          "latency_ms": 724,
+          "http_status": 200
+        },
+        {
+          "ts": 1793340093,
+          "at": "2026-10-30T06:01:33Z",
+          "state": "operational",
+          "latency_ms": 752,
+          "http_status": 200
+        },
+        {
+          "ts": 1793364021,
+          "at": "2026-10-30T12:40:21Z",
+          "state": "operational",
+          "latency_ms": 370,
+          "http_status": 200
+        },
+        {
+          "ts": 1793383933,
+          "at": "2026-10-30T18:12:13Z",
+          "state": "operational",
+          "latency_ms": 498,
+          "http_status": 200
+        },
+        {
+          "ts": 1793398624,
+          "at": "2026-10-30T22:17:04Z",
+          "state": "operational",
+          "latency_ms": 553,
+          "http_status": 200
+        },
+        {
+          "ts": 1793410662,
+          "at": "2026-10-31T01:37:42Z",
+          "state": "operational",
+          "latency_ms": 659,
+          "http_status": 200
+        },
+        {
+          "ts": 1793431699,
+          "at": "2026-10-31T07:28:19Z",
+          "state": "operational",
+          "latency_ms": 426,
+          "http_status": 200
+        },
+        {
+          "ts": 1793454427,
+          "at": "2026-10-31T13:47:07Z",
+          "state": "operational",
+          "latency_ms": 354,
+          "http_status": 200
+        },
+        {
+          "ts": 1793469438,
+          "at": "2026-10-31T17:57:18Z",
+          "state": "operational",
+          "latency_ms": 561,
+          "http_status": 200
+        }
+      ]
+    }
+  },
+  "incidents": [
+    {
+      "id": "delta-1789577108",
+      "service_id": "delta",
+      "service_name": "Delta Ascenseur",
+      "title": "Delta Ascenseur is not responding",
+      "status": "open",
+      "severity": "major_outage",
+      "started_at": "2026-09-16T16:45:08Z",
+      "started_at_ts": 1789577108,
+      "last_update_at": "2026-10-31T17:57:18Z",
+      "message": "HTTP 503"
+    },
+    {
+      "id": "hosting-1789577108",
+      "service_id": "hosting",
+      "service_name": "M4I Hosting",
+      "title": "M4I Hosting is not responding",
+      "status": "open",
+      "severity": "major_outage",
+      "started_at": "2026-09-16T16:45:08Z",
+      "started_at_ts": 1789577108,
+      "last_update_at": "2026-10-31T17:57:18Z",
+      "message": "HTTP 503"
+    }
+  ]
+}
